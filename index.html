@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Mobiele Emoji Planner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link naar het CSS-bestand -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header Sectie -->
+  <header>
+    <div id="header-container">
+      <!-- Linkerkant: Live Tijd -->
+      <div class="header-left">
+        <span id="live-time">--:--:--</span>
+      </div>
+      <!-- Midden: Logo -->
+      <div class="header-center">
+        <img src="images/logo.png" alt="Emoji Dagplanner Logo" class="logo">
+      </div>
+      <!-- Rechterkant: Reset Knop -->
+      <div class="header-right">
+        <div class="icon-container">
+          <span class="delete-label">Reset Planner</span>
+          <button id="reset-button" class="icon-button" aria-label="Reset Planner">
+            <img src="images/folder-icon.png" alt="Reset Icon">
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hoofdinhoud -->
+  <main>
+    <div class="sectors-container">
+      <!-- Ochtend Sector -->
+      <div class="sector" id="morning-sector">
+        <div class="sector-header">
+          <h2>Ochtend</h2>
+          <button class="check-button" data-sector="morning" aria-label="Controleer Ochtend Sector">✔️</button>
+        </div>
+        <div class="emoji-placeholders">
+          <div class="emoji-placeholder" data-time="morning"></div>
+          <div class="emoji-placeholder" data-time="morning"></div>
+          <div class="emoji-placeholder" data-time="morning"></div>
+          <div class="emoji-placeholder" data-time="morning"></div>
+          <!-- Notatieveld voor Ochtend -->
+          <input type="text" class="sector-notation" placeholder="Voeg notities toe..." aria-label="Notities Ochtend">
+        </div>
+      </div>
+
+      <!-- Middag Sector -->
+      <div class="sector" id="midday-sector">
+        <div class="sector-header">
+          <h2>Middag</h2>
+          <button class="check-button" data-sector="midday" aria-label="Controleer Middag Sector">✔️</button>
+        </div>
+        <div class="emoji-placeholders">
+          <div class="emoji-placeholder" data-time="midday"></div>
+          <div class="emoji-placeholder" data-time="midday"></div>
+          <div class="emoji-placeholder" data-time="midday"></div>
+          <div class="emoji-placeholder" data-time="midday"></div>
+          <!-- Notatieveld voor Middag -->
+          <input type="text" class="sector-notation" placeholder="Voeg notities toe..." aria-label="Notities Middag">
+        </div>
+      </div>
+
+      <!-- Avond Sector -->
+      <div class="sector" id="evening-sector">
+        <div class="sector-header">
+          <h2>Avond</h2>
+          <button class="check-button" data-sector="evening" aria-label="Controleer Avond Sector">✔️</button>
+        </div>
+        <div class="emoji-placeholders">
+          <div class="emoji-placeholder" data-time="evening"></div>
+          <div class="emoji-placeholder" data-time="evening"></div>
+          <div class="emoji-placeholder" data-time="evening"></div>
+          <div class="emoji-placeholder" data-time="evening"></div>
+          <!-- Notatieveld voor Avond -->
+          <input type="text" class="sector-notation" placeholder="Voeg notities toe..." aria-label="Notities Avond">
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Sectie met Emoji Deck -->
+  <footer>
+    <!-- Emoji Deck Sectie -->
+    <div id="emoji-deck" class="emoji-deck">
+      <div class="deck-body">
+        <!-- Emoji Grid -->
+        <div id="emoji-grid" class="emoji-grid"></div>
+        <!-- Navigatieknoppen voor Categorieën -->
+        <div class="navigation-buttons">
+          <button id="prev-category" class="nav-button" aria-label="Vorige Categorie">◀️</button>
+          <span id="category-name">Smileys</span>
+          <button id="next-category" class="nav-button" aria-label="Volgende Categorie">▶️</button>
+        </div>
+      </div>
+    </div>
+    <!-- Dag Beoordelingssysteem -->
+    <div class="day-rating">
+      <!-- Initiële Beoordelingscirkel -->
+      <div class="rating-circle" id="rating-circle" aria-label="Beoordeel je dag">
+        <span class="rate-text">Beoordeel</span>
+      </div>
+      <!-- Beoordelingsknoppen (Aanvankelijk Verborgen) -->
+      <div class="rating-buttons" id="rating-buttons">
+        <button class="rating-button" data-rating="1" aria-label="Beoordeel 1"></button>
+        <button class="rating-button" data-rating="2" aria-label="Beoordeel 2"></button>
+        <button class="rating-button" data-rating="3" aria-label="Beoordeel 3"></button>
+        <button class="rating-button" data-rating="4" aria-label="Beoordeel 4"></button>
+        <button class="rating-button" data-rating="5" aria-label="Beoordeel 5"></button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Link naar het JavaScript-bestand -->
+  <script src="script.js"></script>
+</body>
+</html>
