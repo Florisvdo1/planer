@@ -1,0 +1,403 @@
+/* Reset en Basisstijlen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  background-color: #f0f8ff;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Header Stijlen */
+header {
+  background-color: #fff;
+  padding: 10px 15px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+}
+
+#header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left,
+.header-center,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-left,
+.header-right {
+  flex: 1;
+}
+
+.header-center {
+  flex: 1;
+  justify-content: center;
+}
+
+#live-time {
+  font-size: 1em;
+  color: #333;
+  font-weight: bold;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.delete-label {
+  font-size: 0.8em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-button img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Hoofdinhoud Stijlen */
+main {
+  padding-top: 80px; /* Aangepast voor de header hoogte */
+  padding-bottom: 10px;
+}
+
+.sectors-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 10px;
+}
+
+.sector {
+  background-color: #e6f7ff;
+  border: 1px solid #b3daff;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.sector-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.sector-header h2 {
+  font-size: 1.1em;
+  color: #333;
+  font-weight: bold;
+}
+
+.check-button {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: gray;
+  position: absolute;
+  right: 0;
+  transition: color 0.3s;
+}
+
+.check-button:hover {
+  color: #4CAF50;
+}
+
+.check-button.checked {
+  color: #4CAF50;
+}
+
+.emoji-placeholders {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.emoji-placeholder {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border: 2px dashed #b3daff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  cursor: pointer;
+  position: relative;
+}
+
+.sector-notation {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #b3daff;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1em;
+  padding: 5px;
+  outline: none;
+  background-color: #fff;
+}
+
+.sector-notation::placeholder {
+  font-size: 0.8em;
+  color: #999;
+}
+
+.sector-notation:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.emoji-placeholder.highlight {
+  background-color: #d3eaff;
+  border-color: #4CAF50;
+  transform: scale(1.05);
+}
+
+.emoji-placeholder.magnet-active {
+  background-color: #cce5ff;
+  border-color: #4CAF50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+/* Footer Stijlen */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  border-top: 1px solid #ccc;
+}
+
+/* Emoji Deck in Footer */
+#emoji-deck {
+  background-color: transparent;
+  padding: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.deck-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Emoji Grid */
+.emoji-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding: 5px;
+}
+
+.emoji-item {
+  width: 40px;
+  height: 40px;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  user-select: none;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin: 2px;
+}
+
+.emoji-item:active {
+  transform: scale(1.1);
+}
+
+/* Navigatieknoppen */
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  gap: 10px;
+}
+
+.nav-button {
+  background-color: #d3eaff;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #333;
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.nav-button:hover {
+  background-color: #a0c4ff;
+  transform: scale(1.05);
+}
+
+#category-name {
+  font-size: 1em;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Dag Beoordelingssysteem */
+.day-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rating-circle {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border: 3px solid #d3eaff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.rating-circle:hover {
+  background-color: #a0c4ff;
+  border-color: #4CAF50;
+  transform: scale(1.05);
+}
+
+.rate-text {
+  font-size: 0.9em;
+  color: #333;
+}
+
+.rating-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.rating-button {
+  background-color: #d3eaff;
+  border: 3px solid #fff;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.1s, border-color 0.3s, background-color 0.3s;
+  display: none; /* Aanvankelijk verborgen */
+}
+
+.rating-button:hover {
+  background-color: #a0c4ff;
+  border-color: #4CAF50;
+  transform: scale(1.05);
+}
+
+.rating-button.selected::before {
+  content: '👍';
+  position: absolute;
+  font-size: 1.2em;
+  color: #333;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rating-button:active {
+  transform: scale(1.1);
+}
+
+/* Dragging Clone Stijlen */
+.dragging-clone {
+  opacity: 0.8;
+  pointer-events: none;
+  transform: scale(1.15);
+  transition: transform 0.15s ease;
+}
+
+/* Responsieve Stijlen */
+@media (max-width: 480px) {
+  .emoji-item,
+  .nav-button {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2em;
+  }
+
+  .emoji-placeholder,
+  .sector-notation {
+    width: 50px;
+    height: 50px;
+    font-size: 1.8em;
+  }
+
+  .rating-button {
+    width: 35px;
+    height: 35px;
+  }
+
+  .rating-circle {
+    width: 45px;
+    height: 45px;
+  }
+
+  .rate-text {
+    font-size: 0.8em;
+  }
+
+  .icon-button img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  #live-time {
+    font-size: 0.9em;
+  }
+}
